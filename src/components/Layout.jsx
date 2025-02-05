@@ -5,10 +5,6 @@ import  Footer  from './Footer';
 const Layout = () => {
   return (
     <>
-     
-
-      
-
       {/* Main Content Area */}
       
       <main className="min-h-screen flex flex-col relative ">

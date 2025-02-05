@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <div className="md:flex md:justify-between">
+        <div className="md:flex md:justify-between ">
           <div className="mb-6 md:mb-0 md:w-3/6">
             <Link to="/" className="flex items-center">
               <span className="self-center text-2xl font-semibold whitespace-nowrap">InkMudra</span>
@@ -13,7 +13,7 @@ const Footer = () => {
             <div className='p-4 mt-4 rounded-md text-sm'>
               <h3 className="text-lg font-semibold">Welcome to InkMudra - Your Ultimate Printing Partner!</h3>
               <p className="mt-2 text-gray-500">
-                At InkMudra, we specialize in providing top-notch printing services designed with students in mind. Whether you need to print documents, design custom t-shirts, or create vibrant posters, we've got you covered with a process that's both fast and easy.
+              At InkMudra, we specialize in printing high-quality blackbooks and documents for students. Customize your prints with ease, and enjoy fast, reliable service tailored to your needs
               </p>
             </div>
           </div>
@@ -21,41 +21,30 @@ const Footer = () => {
             <div className="flex flex-col items-start">
               <h2 className="mb-4 text-sm font-semibold uppercase">Pages</h2>
               <ul className="text-gray-500 font-medium space-y-2">
-                <li><Link to="/calculate" className="hover:underline">Calculate Price</Link></li>
-                <li><Link to="/about" className="hover:underline">About Us</Link></li>
-                <li><Link to="/why-choose-us" className="hover:underline">Why Choose Us</Link></li>
-                <li><Link to="/profile" className="hover:underline">Profile</Link></li>
+                <li><Link to="/pricecal" className="hover:underline">Calculate Price</Link></li>
+                <li><Link to="/documents" className="hover:underline">Documents</Link></li>
+                <li><Link to="/blackbook" className="hover:underline">Blackbook</Link></li>
               </ul>
             </div>
-            <div className="flex flex-col items-start">
-              <h2 className="mb-4 text-sm font-semibold uppercase">Business</h2>
-              <ul className="text-gray-500 font-medium space-y-2">
-                <li><Link to="/bulk-order" className="hover:underline">Bulk Order</Link></li>
-                <li><Link to="/partner" className="hover:underline">Partner with Us</Link></li>
-                <li><Link to="/careers" className="hover:underline">Join Us (Careers)</Link></li>
-              </ul>
-            </div>
+           
             <div className="flex flex-col items-start">
               <h2 className="mb-4 text-sm font-semibold uppercase">Policies</h2>
               <ul className="text-gray-500 font-medium space-y-2">
-                <li><Link to="/privacy-policy" className="hover:underline">Privacy Policy</Link></li>
-                <li><Link to="/terms-conditions" className="hover:underline">Terms & Conditions</Link></li>
+                <li><Link to="/privacypolicy" className="hover:underline">Privacy Policy</Link></li>
                 <li><Link to="/cancellation-policy" className="hover:underline">Cancellation Policy</Link></li>
               </ul>
             </div>
             <div className="flex flex-col items-start">
               <h2 className="mb-4 text-sm font-semibold uppercase">Contact Us</h2>
               <ul className="text-gray-500 font-medium space-y-2">
-                <li><Link to="/contact" className="hover:underline">Contact Form</Link></li>
-                <li><a href="mailto:kaifhasmi46049@gmail.com" className="hover:underline">Email Us</a></li>
-                <li><a href="tel:+1234567890" className="hover:underline">Call Us</a></li>
+                <li><Link to="/contact-us" className="hover:underline">Contact Form</Link></li>
               </ul>
             </div>
           </div>
         </div>
         <hr className="my-6 border-gray-200 dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024 <Link to="/" className="hover:underline">InkMudra™</Link>. All Rights Reserved.</span>
+          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <Link to="/" className="hover:underline">InkMudra™</Link>. All Rights Reserved.</span>
           <div className="flex mt-4 sm:justify-center sm:mt-0 space-x-5">
             <Link to="https://facebook.com/inkmudra" className="text-gray-500 hover:text-blue-900 dark:hover:text-white">
               <svg className="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">

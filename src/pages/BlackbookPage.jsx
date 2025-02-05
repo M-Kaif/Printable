@@ -1,13 +1,78 @@
-import React from "react";
+import React, {useState} from "react";
 import bb from "../assets/blackbook.jpg";
 import { Link } from "react-router-dom";
 import { Card, Button } from "@material-tailwind/react";
+import doc from '../assets/document.jpg'
+import 'swiper/css';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide} from 'swiper/react';
 // PrimeReact core styles
 import "primereact/resources/primereact.min.css";
 // PrimeReact theme (choose one or customize)
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 
 const BlackBook = () => {
+  const Carousel = () => {
+    const [activeIndex, setActiveIndex] = useState(0);
+  
+    const images = [
+      {
+        src: bb,
+        
+      },
+      {
+        src: doc,
+        
+      },
+    ];
+  
+  
+  
+    return (
+      <div className="relative bg-blue-ray-400 w-full h-auto py-5">
+        <Swiper className="w-full h-auto"
+        loop={true}
+        modules={[Navigation, Pagination, Autoplay]}
+        autoplay={{
+            delay: 3500,
+            disableOnInteraction: false,
+          }}
+        spaceBetween={30} // Space between slides
+        slidesPerView={3} // Number of slides visible at once
+         navigation
+         
+        pagination={{ clickable: true }} // Show pagination (dots)
+        breakpoints={{
+          1024: {
+            slidesPerView: 1, // 2 slides per view on tablets
+          },
+          600: {
+            slidesPerView: 1, // 1 slide per view on mobile
+          },
+          300: {
+            slidesPerView: 1, // 1 slide per view on mobile
+          },
+          
+        }}
+      >
+        {images.map((image, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative w-full ">
+              <img
+                src={image.src}
+                alt={image.title}
+                className="object-cover object-center w-full h-72 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+              />
+              
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      </div>
+    );
+  };
   return (
     <section className="py-12 bg-gradient-to-b from-gray-100 to-gray-50 sm:py-20">
       <div className="container mx-auto px-4">
@@ -15,20 +80,16 @@ const BlackBook = () => {
         <div className="flex flex-col lg:flex-row items-center md:items-start gap-10">
           {/* Left Side: Product Image */}
           <div className="w-full lg:w-1/2 lg:order-1">
-            <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <img
-                src={bb}
-                alt="Document Printing"
-                className="object-cover w-full h-full"
-              />
-            </Card>
+             
+            <Carousel />
+            
           </div>
 
           {/* Right Side: Product Details */}
           <div className="w-full lg:w-1/2 lg:order-2">
             {/* Product Title */}
             <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 leading-tight mb-4">
-              Blackbook Printing Services
+              Blackbook / Thesis
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 mb-6">
               Achieve a professional finish with our superior Blackbook printing
@@ -110,7 +171,7 @@ const BlackBook = () => {
                 className="py-3 px-6 text-lg font-medium bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-600 hover:to-indigo-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-md"
                 ripple={true}
               >
-                Order Now
+                Print Now
               </Button>
             </Link>
           </div>
@@ -121,3 +182,4 @@ const BlackBook = () => {
 };
 
 export default BlackBook;
+

@@ -1,12 +1,16 @@
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage'
-import About from './pages/AboutPage'
 import Document from './pages/DocumentPage';
 import Blackbook from './pages/BlackbookPage'
+import Login from './components/Login'
+import PriceCalculator from './pages/PriceCalculator'
 import BlackbookForm from './pages/forms/BlackbookForm';
 import DocumentForm from './pages/forms/DocumentForm';
+import CancellationPolicy from './pages/CancellationPolicy';
 import './App.css'
 import { createBrowserRouter, RouterProvider  } from 'react-router-dom'
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import ContactUs from './pages/Contactus';
 function App() {
 
   const router = createBrowserRouter([
@@ -17,10 +21,6 @@ function App() {
         {
           index: true, 
           element: <HomePage />,
-        },
-        {
-          path: "about",
-          element: <About />,
         },
         {
           path: "documents",
@@ -38,8 +38,31 @@ function App() {
           path: "order-blackbook",
           element: <BlackbookForm />,
         },
+        {
+          path: "pricecal",
+          element: <PriceCalculator />,
+        },
+        {
+          path: "privacypolicy",
+          element: <PrivacyPolicy />,
+        },
+        {
+          path: "cancellation-policy",
+          element: <CancellationPolicy />,
+        },
+        {
+          path: "contact-us",
+          element: <ContactUs />,
+        },
+        
       ],
     },
+    
+      {
+        path: "login",
+        element: <Login />,
+      },
+    
   ]);
   
 

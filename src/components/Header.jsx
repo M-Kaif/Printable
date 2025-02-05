@@ -132,14 +132,18 @@ function NavList() {
   return (
     <List className="mb-6 mt-4 p-0 lg:mb-0 lg:mt-0 lg:flex-row lg:p-1">
       <NavListMenu />
+      
+      
       <div className="font-medium">
+          <Link to="/pricecal">
         <ListItem className="flex items-center gap-2 py-2 pr-4">
-          <Link to="/about">About</Link>
+          Calculate
         </ListItem>
+          </Link>
       </div>
-      <a href="#" className="font-medium">
+      <Link to="/contact-us" className="font-medium">
         <ListItem className="flex items-center gap-2 py-2 pr-4">Contact</ListItem>
-      </a>
+      </Link>
     </List>
   );
 }
@@ -179,21 +183,22 @@ export function Header() {
     >
       <div className="flex items-center justify-between text-blue-gray-900">
         <Typography
-          as="a"
-          href="#"
           variant="h6"
           className="mr-4 cursor-pointer py-1.5 lg:ml-2 text-black"
         >
+          <Link to={'/'}>
           InkMudra
+          </Link>
         </Typography>
         <div className="hidden lg:block px-2">
           <NavList />
         </div>
         <div className="hidden gap-2 lg:flex">
-          <Button size="sm">Sign Up</Button>
+          <Link to={"/login"}>
           <Button variant="outlined" size="sm">
-            Log In
+          Sign Up / Log In
           </Button>
+          </Link>
         </div>
         <IconButton
           variant="text"
@@ -210,11 +215,9 @@ export function Header() {
       <Collapse open={openNav}>
         <NavList />
         <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-          <Button size="sm" fullWidth>
-            Sign Up
-          </Button>
+          
           <Button variant="outlined" size="sm" fullWidth>
-            Log In
+            SignUp / Log In
           </Button>
         </div>
       </Collapse>

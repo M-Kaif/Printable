@@ -58,7 +58,7 @@ const HomePage = () => {
     ];
 
   return (
-    <div className="w-full relative md:overflow-hidden">
+    <div className="w-full relative md:overflow-hidden " style={{scrollBehavior:"smooth"}}>
       {/* Video background */}
       <video
         src={vid}
@@ -103,25 +103,25 @@ const HomePage = () => {
           initial="hidden"
           animate="visible"
         >
-          <Link to={"about"}>
+          <a href="#printables">
             <Button
               variant="outlined"
               ripple={true}
-              className="rounded-full bg-black/30 hover:bg-black/70 outline-none text-white border-gray-500"
+              className="rounded-full  bg-black/30 hover:bg-black/70 outline-none text-white border-gray-500"
             >
               Explore Printing Options
             </Button>
-          </Link>
+          </a>
         </motion.div>
       </div>
 
       {/* Content Section 2 */}
-      <div ref={ref} className="h-screen bg-[#e8e6e7] p-10 md:flex items-center justify-between">
+      <div id="printables" ref={ref} className="h-screen bg-[#e8e6e7] p-10 md:flex items-center text-black justify-between">
       <div>{isInView && (<motion.h2
          variants={secondSection}
           initial="hidden"
           animate="visible"
-           className="text-3xl md:text-5xl font-semibold text-center">Browse Our Printables</motion.h2>)}</div>
+           className="text-3xl md:text-5xl font-semibold text-center">Our <br /> Printables</motion.h2>)}</div>
         <Carousel />
       </div>
 
@@ -169,7 +169,7 @@ const HomePage = () => {
         </div>
 
         {/*Step Section 4*/ }
-        <section className="pt-10  flex flex-col items-center gap-10 sm:gap-16 bg-[#e8e6e7]">
+        <section className="pt-10  flex flex-col items-center gap-10 sm:gap-16 bg-[#e8e6e7] text-black">
                 <div className="max-w-[1300px] mx-auto px-4">
                     <h2 className="text-3xl font-bold text-center mb-8">Easy Steps to Get Prints</h2>
                     <div className="flex flex-col gap-8 sm:gap-8 md:flex-row items-center">
@@ -214,32 +214,14 @@ const Carousel = () => {
       {
         src: bb,
         link:'/blackbook',
-        title: "Blackbooks",
+        title: "Blackbooks / Thesis",
         description: "Perfectly crafted for students and professionals.",
       },
       {
         src: doc,
         link:'/documents',
-        title: "Document Printing",
+        title: "Documents",
         description: "High-quality paper for all needs.",
-      },
-      {
-        src: "https://i.ibb.co/tCfVky2/carosel-3.png", // External image
-        link:'/blackbook',
-        title: "Flyers & Posters",
-        description: "Vivid colors and premium material.",
-      },
-      {
-        src: "https://i.ibb.co/tCfVky2/carosel-3.png", // External image
-        link:'/documents',
-        title: "Flyers & Posters",
-        description: "Vivid colors and premium material.",
-      },
-      {
-        src: "https://i.ibb.co/tCfVky2/carosel-3.png", // External image
-        link:'/blackbook',
-        title: "Flyers & Posters",
-        description: "Vivid colors and premium material.",
       },
     ];
   
