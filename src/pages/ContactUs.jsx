@@ -11,6 +11,29 @@ import {
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export function ContactUs() {
+  const [error , setError] = useState("")
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", phone: "", message:"" });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+ 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setError("");
+
+    if (!formData.email.includes("@").test(formData.email)) {
+      setError("Enter a valid email ");
+      return;
+    }
+    if (!formData.phone.includes(!/^[0-9]+$/.test(formData.phone))) {
+      setError("Enter a valid phone number");
+      return;
+    }
+    
+   
+    }
+    
   const defaultProps = {
     center: {
       lat: 10.99835602,
@@ -22,6 +45,7 @@ export function ContactUs() {
 
   return (
     <section className="px-6 py-12  lg:py-16 bg-gray-900 text-gray-200">
+
       <div className="container mx-auto text-center mt-2">
         <Typography variant="h5" className="mb-4 text-lg lg:text-2xl text-gray-400">
           Customer Care
@@ -38,42 +62,45 @@ export function ContactUs() {
     
           
           <form className="flex flex-col gap-3 bg-gray-900 text-gray-100 p-6 lg:p-8 rounded-xl shadow-lg">
-            <h2 className="text-left font-bold  text-gray-200 text-xl">
-              Select Inquiry Type
-            </h2>
-            <div className="flex gap-4">
-              <Radio
-                name="inquiry"
-                label="General Inquiry"
-                checked={selectedInquiry === "general"}
-                onChange={() => setSelectedInquiry("general")}
-                color="blue"
-              />
-              <Radio
-                name="inquiry"
-                label="Product Support"
-                checked={selectedInquiry === "support"}
-                onChange={() => setSelectedInquiry("support")}
-                color="blue"
-              />
-            </div>
+            
+           {error && <p className="text-red-400">{error}</p>}
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <Input label="First Name" name="first-name" variant="outlined" color="white" className="text-white placeholder:text-white" required/>
+                <Input 
+                    value={formData.firstName}
+                    onChange={handleChange}
+                     label="First Name" name="first-name" variant="outlined" color="white" className="text-white placeholder:text-white" />
               </div>
               <div>
-                <Input label="Last Name" name="first-name" variant="outlined" color="white" className="text-white placeholder:text-white" required/>
+                <Input 
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    label="Last Name" name="first-name" variant="outlined" color="white" className="text-white placeholder:text-white" />
               </div>
             </div>
             <div>
-              <Input label="Email" name="email" variant="outlined" color="white" className="text-white placeholder:text-white" required/>
+              <Input 
+                    value={formData.email}
+                    onChange={handleChange}
+                    label="Email" name="email" variant="outlined" color="white" className="text-white placeholder:text-white" />
+            </div>
+            <div>
+              <Input 
+                    value={formData.phone}
+                    onChange={handleChange}
+                    label="Phone Number" type="number" maxLength={10} max={10} name="number" variant="outlined" color="white" className="text-white placeholder:text-white" />
             </div>
             <div>
               
-              <Textarea rows={5} label="Your Message" name="message" variant="outlined" color="white" className="outline-none " required/>
+              <Textarea               
+              value={formData.message}
+              onChange={handleChange}
+              rows={5} label="Your Message" name="message" variant="outlined" color="white" className="outline-none " />
               
             </div>
-            <Button className="w-full bg-white text-black hover:bg-gray-300 transition ">
+            <Button 
+            onClick={handleSubmit}
+            className="w-full bg-white text-black hover:bg-gray-300 transition ">
               Send Message
             </Button>
           </form>

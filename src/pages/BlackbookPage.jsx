@@ -104,20 +104,16 @@ const BlackBook = () => {
                   description:
                     "Advanced technology for sharp details and vibrant clarity.",
                 },
-                {
-                  title: "Diverse Options",
-                  description:
-                    "Paperback, hardcover, specialty finishes, or golden print.",
-                },
-                {
-                  title: "Customized Solutions",
-                  description:
-                    "Tailor-made printing to match your unique vision.",
-                },
+                
                 {
                   title: "Affordable Pricing",
                   description:
                     "Premium results at competitive rates with bulk discounts.",
+                },
+                                {
+                  title: "Quick Turnaround",
+                  description:
+                    "Get your document printed and delivered instantly with our efficient process.",
                 },
                 {
                   title: "Convenient Process",
@@ -125,9 +121,9 @@ const BlackBook = () => {
                     "Easy online PDF upload, customizable preferences, and doorstep delivery.",
                 },
                 {
-                  title: "Impressive Printing Options",
+                  title: "Diverse Options",
                   description:
-                    "Hard binding, softcover, and spiral binding for professional presentation.",
+                    "Paperback, hardcover, specialty finishes, or golden print.",
                 },
               ].map(({ title, description }, idx) => (
                 <li
@@ -160,7 +156,7 @@ const BlackBook = () => {
                   <strong>Binding:</strong> Hard Binding with Golden Print
                 </li>
                 <li>
-                  <strong>Color:</strong> Color Printing available
+                  <strong>Color:</strong> Color Print
                 </li>
               </ul>
             </div>

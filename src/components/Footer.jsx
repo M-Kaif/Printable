@@ -13,7 +13,7 @@ const Footer = () => {
             <div className='p-4 mt-4 rounded-md text-sm'>
               <h3 className="text-lg font-semibold">Welcome to InkMudra - Your Ultimate Printing Partner!</h3>
               <p className="mt-2 text-gray-500">
-              At InkMudra, we specialize in printing high-quality blackbooks and documents for students. Customize your prints with ease, and enjoy fast, reliable service tailored to your needs
+              At InkMudra, we specialize in printing high-quality blackbooks and documents. Customize your prints with ease, and enjoy fast, reliable service tailored to your needs
               </p>
             </div>
           </div>

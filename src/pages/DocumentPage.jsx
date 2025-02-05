@@ -90,7 +90,7 @@ const Document = () => {
             Document
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 mb-6">
-              Achieve a professional finish with our superior Blackbook printing
+              Achieve a professional finish with our superior Document printing
               solutions, tailored to meet your unique requirements.
             </p>
 
@@ -100,22 +100,17 @@ const Document = () => {
                 {
                   title: "Superior Quality",
                   description:
-                    "Advanced technology for sharp details and vibrant clarity.",
+                    "Enjoy sharp, vibrant colors and crisp text for professional-looking document.",
                 },
                 {
-                  title: "Diverse Options",
+                  title: "Diverse Binding Options",
                   description:
-                    "Paperback, hardcover, specialty finishes, or golden print.",
+                    "Choose from various binding styles to suit your document needs.",
                 },
                 {
-                  title: "Customized Solutions",
+                  title: "Cost-Effective Solutions",
                   description:
-                    "Tailor-made printing to match your unique vision.",
-                },
-                {
-                  title: "Affordable Pricing",
-                  description:
-                    "Premium results at competitive rates with bulk discounts.",
+                    "Benefit from competitive pricing without compromising on quality.",
                 },
                 {
                   title: "Convenient Process",
@@ -123,9 +118,9 @@ const Document = () => {
                     "Easy online PDF upload, customizable preferences, and doorstep delivery.",
                 },
                 {
-                  title: "Impressive Printing Options",
+                  title: "Quick Turnaround",
                   description:
-                    "Hard binding, softcover, and spiral binding for professional presentation.",
+                    "Get your document printed and delivered instantly with our efficient process.",
                 },
               ].map(({ title, description }, idx) => (
                 <li
@@ -147,18 +142,18 @@ const Document = () => {
               <h2 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-3">
                 Recommended Standards:
               </h2>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-2 text-gray-700">
                 <li>
-                  <strong>Paper:</strong> 85 gsm or 100 gsm Bond Paper
+                  <strong>PDF</strong>  for perfect print!
+                </li>
+                <li>
+                  <strong>Paper:</strong> 75 gsm or Above.
                 </li>
                 <li>
                   <strong>Size:</strong> A4
                 </li>
                 <li>
-                  <strong>Binding:</strong> Hard Binding with Golden Print
-                </li>
-                <li>
-                  <strong>Color:</strong> Color Printing available
+                File is above 100 MB? <Link to="/contact-us" className="text-blue-400 underline">Contact Us</Link> 
                 </li>
               </ul>
             </div>

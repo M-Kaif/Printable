@@ -34,7 +34,7 @@ function NavListMenu() {
   const [openNestedMenu, setopenNestedMenu] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const renderItems = nestedMenuItems.map(({ title }, key) => (
-    <Link to="#" key={key}>
+    <Link to="/" key={key}>
       <MenuItem>{title}</MenuItem>
     </Link>
   ));
@@ -80,17 +80,7 @@ function NavListMenu() {
             open={openNestedMenu}
             handler={setopenNestedMenu}
           >
-            <MenuHandler className="flex items-center justify-between">
-              <MenuItem>
-                More
-                <ChevronUpIcon
-                  strokeWidth={2.5}
-                  className={`h-3.5 w-3.5 transition-transform ${
-                    isMenuOpen ? "rotate-90" : ""
-                  }`}
-                />
-              </MenuItem>
-            </MenuHandler>
+            
             <MenuList className="rounded-xl">{renderItems}</MenuList>
           </Menu>
         </MenuList>
@@ -107,17 +97,7 @@ function NavListMenu() {
             open={openNestedMenu}
             handler={setopenNestedMenu}
           >
-            <MenuHandler className="flex items-center justify-between">
-              <MenuItem>
-                More
-                <ChevronUpIcon
-                  strokeWidth={2.5}
-                  className={`h-3.5 w-3.5 transition-transform ${
-                    isMenuOpen ? "rotate-90" : ""
-                  }`}
-                />
-              </MenuItem>
-            </MenuHandler>
+           
             <MenuList className="block rounded-xl lg:hidden">
               {renderItems}
             </MenuList>

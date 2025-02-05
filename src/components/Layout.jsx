@@ -7,7 +7,7 @@ const Layout = () => {
     <>
       {/* Main Content Area */}
       
-      <main className="min-h-screen flex flex-col relative ">
+      <main className="min-h-screen flex flex-col relative">
       <header className='absolute my-2 w-full px-5 top-2 z-10'>
         <Header/>
       </header>
